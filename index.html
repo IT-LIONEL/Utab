@@ -3,27 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educational Technology - Online Exam Portal</title>
+    <title>UTAB - Educational Technology CAT Exam</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#5D5CDE',
-                        'primary-dark': '#4A4AB8'
+                        'utab-blue': '#5D5CDE',
+                        'utab-green': '#059669',
                     }
                 }
             }
         }
     </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @media print {
-            .no-print { display: none; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .exam-card {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
         }
     </style>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 min-h-screen">
+<body class="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
     <!-- Dark mode detection script -->
     <script>
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -38,317 +49,199 @@
         });
     </script>
 
-    <div class="container mx-auto px-3 sm:px-4 lg:px-6 py-4 sm:py-6 lg:py-8 max-w-5xl">
-        <!-- Header -->
-        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 mb-4 sm:mb-6">
-            <div class="text-center mb-4 sm:mb-6">
-                     <div class="flex justify-center mb-4 sm:mb-6">
-                    <img src="https://pfst.cf2.poecdn.net/base/image/29d5cf6d2b6ca426d526aa9c970cfaee537cee417d0372954824fdac1a34b857?w=319&h=158" 
-                         alt="UTAB - University of Technology and Arts of Byumba" 
-                         class="h-16 sm:h-20 lg:h-24 w-auto object-contain">
-                     </div>
-                <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 dark:text-white mb-2 leading-tight">
-                    EDUCATIONAL TECHNOLOGY : UTAB
-                </h1>
-                <h2 class="text-lg sm:text-xl font-semibold text-primary mb-3 sm:mb-4">
-                    SUPERVISED CAT
-                </h2>
-                <div class="bg-gray-50 dark:bg-gray-700 p-3 sm:p-4 rounded-lg">
-                    <p class="text-base sm:text-lg font-medium text-gray-700 dark:text-gray-300">
-                        FACULTY OF EDUCATION
-                    </p>
-                    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400">
-                        DEPARTMENT OF ARTS AND LANGUAGES
-                    </p>
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Header with Logo -->
+        <div class="text-center mb-8">
+            <div class="inline-block mb-4">
+                <img src="https://pfst.cf2.poecdn.net/base/image/29d5cf6d2b6ca426d526aa9c970cfaee537cee417d0372954824fdac1a34b857?w=319&h=158" 
+                     alt="UTAB Logo" 
+                     class="h-20 w-auto mx-auto rounded-lg shadow-md">
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-2">
+                University of Technology and Arts of Byumba
+            </h1>
+            <p class="text-lg text-gray-600 dark:text-gray-300">
+                Faculty of Education - Department of Arts and Languages
+            </p>
+        </div>
+
+        <!-- Exam Notification Card -->
+        <div class="exam-card bg-white dark:bg-gray-800 rounded-2xl p-8 mb-8">
+            <!-- Notification Badge -->
+            <div class="flex items-center justify-center mb-6">
+                <div class="bg-red-500 text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center">
+                    <i class="fas fa-exclamation-triangle mr-2"></i>
+                    SUPERVISED CAT EXAM NOTIFICATION
                 </div>
             </div>
 
             <!-- Exam Details -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-6 mb-4 sm:mb-6">
-                <div class="space-y-2 sm:space-y-3">
-                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 sm:p-3 bg-gray-50 dark:bg-gray-700 rounded">
-                        <span class="font-medium text-gray-600 dark:text-gray-300 text-sm sm:text-base">Course Module:</span>
-                        <span class="text-gray-800 dark:text-white text-sm sm:text-base font-medium">Educational Technology</span>
-                    </div>
-                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 sm:p-3 bg-gray-50 dark:bg-gray-700 rounded">
-                        <span class="font-medium text-gray-600 dark:text-gray-300 text-sm sm:text-base">Module Code:</span>
-                        <span class="text-gray-800 dark:text-white text-sm sm:text-base font-medium">EDU302</span>
-                    </div>
-                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 sm:p-3 bg-gray-50 dark:bg-gray-700 rounded">
-                        <span class="font-medium text-gray-600 dark:text-gray-300 text-sm sm:text-base">Academic Year:</span>
-                        <span class="text-gray-800 dark:text-white text-sm sm:text-base font-medium">2024/2025</span>
-                    </div>
+            <div class="space-y-6">
+                <!-- Course Information -->
+                <div class="border-l-4 border-utab-blue pl-4">
+                    <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">
+                        Educational Technology
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-300">Module Code: EDU302</p>
                 </div>
-                <div class="space-y-2 sm:space-y-3">
-                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 sm:p-3 bg-gray-50 dark:bg-gray-700 rounded">
-                        <span class="font-medium text-gray-600 dark:text-gray-300 text-sm sm:text-base">Current Date (Rwanda):</span>
-                        <span id="currentDate" class="text-gray-800 dark:text-white text-sm sm:text-base font-medium">Loading...</span>
-                    </div>
-                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 sm:p-3 bg-gray-50 dark:bg-gray-700 rounded">
-                        <span class="font-medium text-gray-600 dark:text-gray-300 text-sm sm:text-base">Duration:</span>
-                        <span class="text-gray-800 dark:text-white text-sm sm:text-base font-medium">1 Hour</span>
-                    </div>
-                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 sm:p-3 bg-gray-50 dark:bg-gray-700 rounded">
-                        <span class="font-medium text-gray-600 dark:text-gray-300 text-sm sm:text-base">Total Marks:</span>
-                        <span class="text-gray-800 dark:text-white text-sm sm:text-base font-medium">30 Marks</span>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Examiner Info -->
-            <div class="text-center p-3 sm:p-4 bg-primary bg-opacity-10 rounded-lg">
-                <p class="text-gray-700 dark:text-gray-300 text-sm sm:text-base">
-                    <span class="font-medium">Examiner:</span> Mr. Hassan SINAMENYE PhD Cand.
-                </p>
-                <p class="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">
-                    Number of Students: 300
-                </p>
-            </div>
-        </div>
-
-        <!-- Instructions -->
-        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 mb-4 sm:mb-6">
-            <h3 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 dark:text-white mb-4 sm:mb-6 flex items-center">
-                <svg class="w-5 h-5 sm:w-6 sm:h-6 mr-2 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-                IMPORTANT INSTRUCTIONS
-            </h3>
-            
-            <div class="space-y-4">
-                <div class="bg-yellow-50 dark:bg-yellow-900 border-l-4 border-yellow-400 p-4 rounded">
-                    <div class="flex">
-                        <div class="flex-shrink-0">
-                            <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
-                            </svg>
+                <!-- Exam Details Grid -->
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-calendar-alt text-utab-blue w-6"></i>
+                            <div class="ml-3">
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Exam Date</p>
+                                <p class="font-semibold text-gray-800 dark:text-white" id="examDate"></p>
+                            </div>
                         </div>
-                        <div class="ml-3">
-                            <p class="text-sm text-yellow-700 dark:text-yellow-200">
-                                <strong>Critical:</strong> Do not write anything on the question paper as it will be regarded as a cheating case.
-                            </p>
+                        
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-utab-blue w-6"></i>
+                            <div class="ml-3">
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Duration</p>
+                                <p class="font-semibold text-gray-800 dark:text-white">1 Hour</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <i class="fas fa-users text-utab-blue w-6"></i>
+                            <div class="ml-3">
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Students</p>
+                                <p class="font-semibold text-gray-800 dark:text-white">300</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-graduation-cap text-utab-blue w-6"></i>
+                            <div class="ml-3">
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Academic Year</p>
+                                <p class="font-semibold text-gray-800 dark:text-white">2024/2025</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-utab-blue w-6"></i>
+                            <div class="ml-3">
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Total Marks</p>
+                                <p class="font-semibold text-gray-800 dark:text-white">20 Marks</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <i class="fas fa-user-tie text-utab-blue w-6"></i>
+                            <div class="ml-3">
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Examiner</p>
+                                <p class="font-semibold text-gray-800 dark:text-white">Mr. Hassan SINAMENYE PhD Cand.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                    <div class="bg-blue-50 dark:bg-blue-900 p-3 sm:p-4 rounded-lg">
-                        <h4 class="font-semibold text-blue-800 dark:text-blue-200 mb-2 text-sm sm:text-base">Exam Structure</h4>
-                        <ul class="text-blue-700 dark:text-blue-300 text-xs sm:text-sm space-y-1">
-                            <li>• This paper has three sections: A, B, C</li>
-                            <li>• Section A & B are compulsory</li>
-                            <li>• Total: 30 marks</li>
-                        </ul>
+                <!-- Exam Structure -->
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
+                    <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4 flex items-center">
+                        <i class="fas fa-list-alt text-utab-blue mr-2"></i>
+                        Exam Structure
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-white dark:bg-gray-600 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 dark:text-white">Section A</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Multiple Choice Questions</p>
+                            <p class="text-utab-blue font-bold">10 Marks</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-600 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 dark:text-white">Section B</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">True/False Questions</p>
+                            <p class="text-utab-blue font-bold">10 Marks</p>
+                        </div>
                     </div>
-                    
-                    <div class="bg-green-50 dark:bg-green-900 p-3 sm:p-4 rounded-lg">
-                        <h4 class="font-semibold text-green-800 dark:text-green-200 mb-2 text-sm sm:text-base">Question Types</h4>
-                        <ul class="text-green-700 dark:text-green-300 text-xs sm:text-sm space-y-1">
-                            <li>• Section A: Multiple Choice (10 marks)</li>
-                            <li>• Section B: True/False (10 marks)</li>
-                            <li>• Section C: Written Response (10 marks)</li>
-                        </ul>
+                    <div class="mt-4 p-4 bg-blue-50 dark:bg-blue-900/30 rounded-lg">
+                        <p class="text-sm text-blue-700 dark:text-blue-300">
+                            <i class="fas fa-info-circle mr-2"></i>
+                            Both sections are compulsory. Do not write anything on the question paper.
+                        </p>
                     </div>
                 </div>
 
-                <div class="bg-red-50 dark:bg-red-900 border border-red-200 dark:border-red-700 p-4 rounded-lg">
-                    <h4 class="font-semibold text-red-800 dark:text-red-200 mb-2">Before You Begin:</h4>
-                    <ul class="text-red-700 dark:text-red-300 text-sm space-y-1">
-                        <li>• Ensure you have a stable internet connection</li>
-                        <li>• You will need your registration number</li>
-                        <li>• Read all questions carefully before answering</li>
-                        <li>• Make sure to submit your exam before the time limit</li>
-                        <li>• Keep track of your time - you have 1 hour to complete</li>
+                <!-- Instructions -->
+                <div class="bg-yellow-50 dark:bg-yellow-900/30 border-l-4 border-yellow-400 p-4 rounded-r-lg">
+                    <h3 class="text-lg font-semibold text-yellow-800 dark:text-yellow-200 mb-2">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>
+                        Important Instructions
+                    </h3>
+                    <ul class="text-sm text-yellow-700 dark:text-yellow-300 space-y-1">
+                        <li>• This exam contains two sections: A and B (20 marks total)</li>
+                        <li>• Both sections are compulsory</li>
+                        <li>• Do not write anything on the question paper</li>
+                        <li>• Writing on question paper will be regarded as cheating</li>
+                        <li>• Duration: 1 Hour</li>
                     </ul>
                 </div>
-            </div>
-        </div>
 
-        <!-- Student Information Form -->
-        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 mb-4 sm:mb-6">
-            <h3 class="text-lg sm:text-xl font-bold text-gray-800 dark:text-white mb-3 sm:mb-4">Student Information</h3>
-            <div class="space-y-3 sm:space-y-4">
-                <div>
-                    <label for="studentName" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Full Name *
-                    </label>
-                    <input type="text" id="studentName" class="w-full px-3 sm:px-4 py-3 sm:py-2 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors" placeholder="Enter your full name" required>
+                <!-- Start Assessment Button -->
+                <div class="text-center pt-6">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdbBcs-3YMY_29HGrUp9tvYDiJToDlvh-Db-iUVB2sbzcL-eA/viewform?usp=dialog" 
+                       target="_blank"
+                       class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-utab-blue to-purple-600 hover:from-purple-600 hover:to-utab-blue text-white font-bold text-lg rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 pulse-animation">
+                        <i class="fas fa-play mr-3"></i>
+                        START ASSESSMENT
+                        <i class="fas fa-external-link-alt ml-3"></i>
+                    </a>
                 </div>
-                <div>
-                    <label for="registrationNumber" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Registration Number *
-                    </label>
-                    <input type="text" id="registrationNumber" class="w-full px-3 sm:px-4 py-3 sm:py-2 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors" placeholder="Enter your registration number" required>
-                </div>
-                <div>
-                    <label for="option" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Option/Specialization
-                    </label>
-                    <input type="text" id="option" class="w-full px-3 sm:px-4 py-3 sm:py-2 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors" placeholder="Enter your option (if applicable)">
+
+                <!-- Footer -->
+                <div class="text-center pt-6 border-t border-gray-200 dark:border-gray-600">
+                    <p class="text-sm text-gray-500 dark:text-gray-400">
+                        Good Luck with your examination!
+                    </p>
+                    <p class="text-xs text-gray-400 dark:text-gray-500 mt-2">
+                        University of Technology and Arts of Byumba - Faculty of Education
+                    </p>
                 </div>
             </div>
         </div>
 
-        <!-- Ready to Start -->
-        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 text-center">
-            <div class="mb-4 sm:mb-6">
-                <svg class="w-12 h-12 sm:w-16 sm:h-16 text-primary mx-auto mb-3 sm:mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-                <h3 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 dark:text-white mb-2">Ready to Begin?</h3>
-                <p class="text-gray-600 dark:text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">
-                    Make sure you have read all instructions and filled in your information above.
-                </p>
-            </div>
-
-            <div class="space-y-3 sm:space-y-4">
-                <div id="validationMessage" class="hidden bg-red-50 dark:bg-red-900 border border-red-200 dark:border-red-700 text-red-700 dark:text-red-300 px-3 sm:px-4 py-3 rounded text-sm">
-                    Please fill in all required fields before starting the exam.
-                </div>
-                
-                <button id="startExamBtn" onclick="startExam()" class="w-full sm:w-auto bg-primary hover:bg-primary-dark text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary focus:ring-opacity-50 text-sm sm:text-base">
-                    <svg class="w-4 h-4 sm:w-5 sm:h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    START EXAM NOW
-                </button>
-                
-                <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
-                    You will be redirected to the online exam platform
-                </p>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <div class="mt-8 text-center text-gray-500 dark:text-gray-400 text-sm">
-            <p>Faculty of Education - Department of Arts and Languages</p>
-            <p>Good Luck with your examination!</p>
-        </div>
-    </div>
-
-    <!-- Custom Modal for Confirmation -->
-    <div id="confirmModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-        <div class="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg max-w-sm sm:max-w-md w-full mx-2 sm:mx-4">
-            <h3 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-white mb-3 sm:mb-4">Confirm Exam Start</h3>
-            <p class="text-gray-600 dark:text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">
-                Are you ready to start the Educational Technology exam? Once you begin, the timer will start and you'll have 1 hour to complete all sections.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-end space-y-2 sm:space-y-0 sm:space-x-3">
-                <button onclick="closeModal()" class="w-full sm:w-auto px-4 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded transition text-sm sm:text-base">
-                    Cancel
-                </button>
-                <button onclick="proceedToExam()" class="w-full sm:w-auto px-4 py-2 bg-primary text-white hover:bg-primary-dark rounded transition text-sm sm:text-base">
-                    Start Exam
-                </button>
+        <!-- Status Indicator -->
+        <div class="fixed bottom-6 right-6">
+            <div class="bg-green-500 text-white px-4 py-2 rounded-full shadow-lg flex items-center">
+                <div class="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></div>
+                <span class="text-sm font-medium">Exam Active</span>
             </div>
         </div>
     </div>
 
     <script>
-        function startExam() {
-            const studentName = document.getElementById('studentName').value.trim();
-            const registrationNumber = document.getElementById('registrationNumber').value.trim();
-            const validationMessage = document.getElementById('validationMessage');
+        // Set today's date
+        const today = new Date();
+        const options = { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        };
+        document.getElementById('examDate').textContent = today.toLocaleDateString('en-US', options);
 
-            // Validate required fields
-            if (!studentName || !registrationNumber) {
-                validationMessage.classList.remove('hidden');
-                validationMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                return;
-            }
-
-            validationMessage.classList.add('hidden');
-            
-            // Show confirmation modal
-            document.getElementById('confirmModal').classList.remove('hidden');
-        }
-
-        function closeModal() {
-            document.getElementById('confirmModal').classList.add('hidden');
-        }
-
-        function proceedToExam() {
-            // Store student info (for display purposes)
-            const studentInfo = {
-                name: document.getElementById('studentName').value.trim(),
-                registration: document.getElementById('registrationNumber').value.trim(),
-                option: document.getElementById('option').value.trim()
-            };
-            
-            // Open the Google Forms exam in a new tab
-            window.open('https://docs.google.com/forms/d/e/1FAIpQLSdbBcs-3YMY_29HGrUp9tvYDiJToDlvh-Db-iUVB2sbzcL-eA/viewform?usp=dialog', '_blank');
-            
-            closeModal();
-            
-            // Show success message
-            showSuccessMessage();
-        }
-
-        function showSuccessMessage() {
-            const successDiv = document.createElement('div');
-            successDiv.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 transform transition-all duration-300';
-            successDiv.innerHTML = `
-                <div class="flex items-center">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    Exam opened in new tab. Good luck!
-                </div>
-            `;
-            document.body.appendChild(successDiv);
-
-            setTimeout(() => {
-                successDiv.remove();
-            }, 5000);
-        }
-
-        // Auto-hide validation message when user starts typing
-        document.getElementById('studentName').addEventListener('input', function() {
-            document.getElementById('validationMessage').classList.add('hidden');
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate cards on scroll
+            const cards = document.querySelectorAll('.exam-card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100);
+            });
         });
+    </script>
+</body>
+    </html>
 
-        document.getElementById('registrationNumber').addEventListener('input', function() {
-            document.getElementById('validationMessage').classList.add('hidden');
-        });
 
-        // Rwanda Time Clock Function
-        function updateRwandaTime() {
-            try {
-                // Rwanda is in Central Africa Time (CAT) - UTC+2
-                const now = new Date();
-                const rwandaTime = new Date(now.toLocaleString("en-US", {timeZone: "Africa/Kigali"}));
-                
-                // Format date and time for Rwanda
-                const options = {
-                    timeZone: "Africa/Kigali",
-                    weekday: 'long',
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    second: '2-digit',
-                    hour12: true
-                };
-                
-                const formattedDateTime = rwandaTime.toLocaleDateString('en-US', options);
-                
-                // Update the display
-                const currentDateElement = document.getElementById('currentDate');
-                if (currentDateElement) {
-                    currentDateElement.innerHTML = `
-                        <div class="text-center sm:text-right">
-                            <div class="font-semibold">${formattedDateTime.split(' at ')[0]}</div>
-                            <div class="text-xs sm:text-sm text-primary font-medium">${formattedDateTime.split(' at ')[1]} CAT</div>
-                        </div>
-                    `;
-                }
-            } catch (error) {
-                // Fallback if timezone is not supported
-                const now = new Date();
-                const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
-                const rwandaTime = new Date(utcTime + (2 * 3600000)); // UTC+2
-                
-                const dateStr = rwandaTime.toLocaleDateString('en-US', {
-                    weekday: 'long',
-          
+
+    
